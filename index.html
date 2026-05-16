@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A Survey of Toxicity Detection and Mitigation Strategies for Multilingual Language Models</title>
+    <meta
+      name="description"
+      content="Findings of ACL 2026 project page for A Survey of Toxicity Detection and Mitigation Strategies for Multilingual Language Models."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Project navigation">
+      <a class="wordmark" href="#top">Multilingual Detoxification</a>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#taxonomy">Taxonomy</a>
+        <a href="#references">References</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="paper-title">
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <p class="venue">Findings of ACL 2026</p>
+          <h1 id="paper-title">A Survey of Toxicity Detection and Mitigation Strategies for Multilingual Language Models</h1>
+          <p class="authors">Soham Dan · Himanshu Beniwal · Thomas Hartvigsen</p>
+          <p class="hero-copy">
+            A survey of multilingual toxicity detection and detoxification for LLMs, organized around threat models,
+            task setups, detection methods, mitigation strategies, and open evaluation challenges.
+          </p>
+          <div class="actions" aria-label="Paper links">
+            <a class="button primary" href="assets/paper.pdf">PDF</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band abstract-band" id="overview">
+        <div class="content-grid">
+          <div>
+            <p class="eyebrow">Abstract</p>
+            <h2>Multilingual safety is not English safety translated.</h2>
+          </div>
+          <p class="lead">
+            Large language models (LLMs) are increasingly deployed across languages, but their safety behavior remains
+            uneven across linguistic and cultural contexts. This survey synthesizes work on toxicity detection and
+            detoxification for multilingual LLMs. We first catalogue threat models that exploit language choice,
+            translation pivots, code-switching, orthographic variation, multi-turn interaction, and post-deployment
+            fine-tuning to weaken safety alignment. We then organize task formulations, multilingual detection
+            approaches, and mitigation strategies spanning data filtering, supervised and preference-based tuning,
+            decoding-time steering, representation editing, and multilingual guardrails. Across these areas, we
+            identify persistent challenges: uneven language coverage, culturally contingent definitions of harm,
+            fragmented evaluation protocols, and the risk that detoxification suppresses legitimate dialectal or
+            identity-related expression.
+          </p>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="section-heading">
+          <p class="eyebrow">Paper Map</p>
+          <h2>What the survey organizes</h2>
+        </div>
+        <div class="topic-grid">
+          <article class="topic-card">
+            <span class="topic-index">01</span>
+            <h3>Threat Models</h3>
+            <p>Language-shift, translation-mediated, code-switching, red-teaming, and post-deployment adaptation attacks.</p>
+          </article>
+          <article class="topic-card">
+            <span class="topic-index">02</span>
+            <h3>Datasets and Metrics</h3>
+            <p>Toxic-to-neutral rewriting, toxic text detection, toxic-generation evaluation, and preservation metrics.</p>
+          </article>
+          <article class="topic-card">
+            <span class="topic-index">03</span>
+            <h3>Detection</h3>
+            <p>Multilingual transformers, translation pipelines, representation-level probes, and LLM-based detectors.</p>
+          </article>
+          <article class="topic-card">
+            <span class="topic-index">04</span>
+            <h3>Detoxification</h3>
+            <p>Data filtering, supervised and preference tuning, decoding-time steering, representation editing, and guardrails.</p>
+          </article>
+          <article class="topic-card">
+            <span class="topic-index">05</span>
+            <h3>Open Challenges</h3>
+            <p>Cross-lingual gaps, cultural misalignment, fragmented evaluation, over-suppression, and code-switching.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band figure-band" id="taxonomy">
+        <div class="section-heading">
+          <p class="eyebrow">Taxonomy</p>
+          <h2>A compact view of multilingual toxicity work</h2>
+        </div>
+        <figure class="paper-figure">
+          <img src="assets/figures/taxonomy.png" alt="Taxonomy of toxicity in multilingual large language models">
+          <figcaption>A brief taxonomy of toxicity in multilingual LLMs, reproduced from the project source assets.</figcaption>
+        </figure>
+      </section>
+
+      <section class="band challenge-band">
+        <div class="section-heading">
+          <p class="eyebrow">Takeaways</p>
+          <h2>Research needs highlighted by the paper</h2>
+        </div>
+        <div class="takeaway-list">
+          <article>
+            <h3>Cross-lingual transfer remains unreliable</h3>
+            <p>Safety methods that work in English can underperform in low-resource, morphologically rich, or culturally distant settings.</p>
+          </article>
+          <article>
+            <h3>Evaluation needs cultural grounding</h3>
+            <p>Benchmarks need to move beyond translated prompts and include community-aware definitions of harm.</p>
+          </article>
+          <article>
+            <h3>Detoxification can erase legitimate expression</h3>
+            <p>Mitigation should measure toxicity reduction alongside preservation of meaning, style, dialect, and identity-related speech.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="band references-band" id="references">
+        <div class="section-heading references-heading">
+          <div>
+            <p class="eyebrow">References</p>
+            <h2>Section-by-section bibliography</h2>
+          </div>
+          <div class="reference-tools">
+            <label for="reference-search">Search references</label>
+            <input id="reference-search" type="search" placeholder="Title, author, key, venue">
+          </div>
+        </div>
+
+        <div class="validation" id="reference-validation" aria-live="polite"></div>
+        <div class="reference-layout">
+          <aside class="section-list" aria-label="Reference sections">
+            <div id="section-tabs"></div>
+          </aside>
+          <div class="reference-results">
+            <div id="section-references"></div>
+            <details class="full-index">
+              <summary>Full bibliography index</summary>
+              <div id="full-bibliography"></div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Static project page for <em>A Survey of Toxicity Detection and Mitigation Strategies for Multilingual Language Models</em>.
+        The PDF is the content source of truth; references are generated from the BibTeX source.
+      </p>
+    </footer>
+
+    <script src="assets/references.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
